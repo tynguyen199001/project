@@ -13,28 +13,12 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href=""
-                       aria-expanded="false">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span class="hide-menu">Profile</span>
-                    </a>
-                </li>
- 
-                <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('categories.index')}}"
                        aria-expanded="false">
                         <i class="fa fa-table" aria-hidden="true"></i>
                         <span class="hide-menu">Loại sản phẩm</span>
                     </a>
-
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('brands.index')}}"
-                       aria-expanded="false">
-                        <i class="fab fa-bandcamp" aria-hidden="true"></i>
-                        <span class="hide-menu">Thương hiệu sản phẩm</span>
-                    </a>
                 </li>
-    
                 <li class="sidebar-item">
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('products.index')}}"
                        aria-expanded="false">
