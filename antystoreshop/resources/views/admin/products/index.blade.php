@@ -10,9 +10,16 @@
             <div class="col-sm-12">
                 <div class="white-box">
                     <h3 class="box-title"></h3>
-                    <a href="{{route('products.create')}}">
-                        <button class="text-muted">Thêm sản phẩm</button>
-                    </a>
+                    <div class="row">
+                        <div class="col-2">
+                            <a href="{{route('products.create')}}">
+                                <button class="text-muted">Thêm sản phẩm</button>
+                            </a>
+                        </div>
+                        <div class="col-2">
+                            <a href="{{route('products.trash')}}">  <button class="text-muted">Thùng Rác</button></a>
+                        </div>
+                    </div>
                     <div class="table-responsive">
                         <table class="table text-nowrap">
                             <thead>
@@ -37,7 +44,7 @@
                                         <td>{{$product->id}}</td>
                                         <td>{{$product->name}}</td>
                                         <td>{{$product->price}}</td>
-                                        <td><img src="{{$product->image_path}}" height="100"width="100"></td>
+                                        <td><img src="{{$product->image_path}}" height="100" width="100"></td>
                                         <td>{{optional($product->category)->name}}</td>
                                         @if($product->status === 0)
                                             <td><a href="{{ route('products.unactive' , $product->id) }}"><i
@@ -67,7 +74,7 @@
                             </tbody>
                         </table>
                     </div>
-                        {{ $products->links() }}
+                    {{ $products->links() }}
                 </div>
             </div>
         </div>

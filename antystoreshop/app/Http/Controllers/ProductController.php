@@ -59,7 +59,7 @@ class ProductController extends Controller
     {
         $this->product->findOrFail($id)->update(['status' => 1]);
         return redirect()->route('products.index');
-    
+
     }
 
     /**
@@ -85,7 +85,7 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
        //  dd($request->all());
-      
+
         $dataProductCreate = [
             'name' => $request->name,
             'price' => $request->price,
@@ -119,7 +119,7 @@ class ProductController extends Controller
             }
         }
 
-      
+
 
         return redirect()->route('products.index');
 
@@ -195,9 +195,9 @@ class ProductController extends Controller
                 }
             }
 
-    
 
-    
+
+
             DB::commit();
             return redirect()->route('products.index');
         } catch (\Exception $e) {
@@ -225,5 +225,33 @@ class ProductController extends Controller
         $htmlOption = $recusive->showCategories($parentId);
         return $htmlOption;
     }
+    public function trash(){
 
+        $products = Product::onlyTrashed()->get();
+//        dd($products);
+        return view('admin.products.trash',compact('products'));
+    }
+
+    public function restore($id){
+        $products = Product::withTrashed()->find($id);
+        try {
+            $products->restore();
+            return redirect()->route('products.trash')->with('success', 'Khôi phục' . ' ' . $products->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('products.trash')->with('error', 'Khôi phục' . ' ' . $products->name . ' ' .  'không thành công');
+        }
+        return view('admin.products.trash',compact('products'));
+    }
+    public function forceDelete($id){
+        $products = Product::onlyTrashed()->findOrFail($id);
+        try {
+            $products->forceDelete();
+            return redirect()->route('products.trash')->with('success', 'Xóa' . ' ' . $products->name . ' ' .  'thành công');
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->route('products.trash')->with('error', 'Xóa ' . ' ' . $products->name . ' ' .  'không thành công');
+        }
+        return view('admin.products.trash',compact('products'));
+    }
 }

@@ -31,11 +31,15 @@ Route::prefix('/categories')->group(function () {
 });
 Route::resource('brands', BrandController::class);
 //san pham
-Route::resource('products', ProductController::class);
-Route::prefix('/products')->group(function () {
+
+Route::prefix('products')->group(function () {
+    Route::get('/trash', [ProductController::class, 'trash'])->name('products.trash');
+    Route::get('/restore/{id}', [ProductController::class, 'restore'])->name('products.restore');
+    Route::delete('/forceDelete/{id}', [ProductController::class, 'forceDelete'])->name('products.forceDelete');
     Route::get('/active/{id}', [ProductController::class, 'active'])->name('products.active');
     Route::get('/unactive/{id}', [ProductController::class, 'unactive'])->name('products.unactive');
 });
+Route::resource('products', ProductController::class);
 //tai khoan
 Route::resource('users', UserController::class);
 Route::resource('roles', RoleController::class);
