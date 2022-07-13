@@ -5,8 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\LoginController;
-use Illuminate\Http\Request;
-use App\Models\Categories;
+use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\Web\HomeController;
 // use App\Http\Controllers\Web\CategoryController as WebCategoryController;
@@ -21,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//frontend
 
 //danh muc
 Route::resource('categories', CategoriesController::class);
@@ -46,8 +45,5 @@ Route::resource('roles', RoleController::class);
 Route::get('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/login', [LoginController::class, 'loginAdmin'])->name('login.loginAdmin');
 
-Route::group(['prefix' => 'frontend'], function () {
-    Route::resource('home', HomeController::class);
-    Route::get('/category/{slug}/{id}', [WebCategoryController::class,'index'])->name('category.product');
+Route::resource('/front',HomeController::class);
 
-});

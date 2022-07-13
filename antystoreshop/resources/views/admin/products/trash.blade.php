@@ -18,7 +18,7 @@
                         <th>Giá</th>
                         <th>Hinh Anh</th>
                         <th>Danh muc san pham</th>
-                        <th>Trạng thái</th>
+                   
                         <th>Action</th>
                     </tr>
                     </thead>
@@ -30,7 +30,7 @@
                             <td>{{$product->price}}</td>
                             <td><img src="{{$product->image_path}}" height="100" width="100"></td>
                             <td>{{$product->category->name}}</td>
-                            <td>{{$product->status}}</td>
+                          
                             <td>
                                 <a href="{{route('products.restore',$product->id)}}">
                                     <button style="border-radius:20px "
