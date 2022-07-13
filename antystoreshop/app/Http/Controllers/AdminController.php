@@ -10,6 +10,7 @@ class AdminController extends Controller
         return view('admin.dashbroard');
     }
     public function index1(){
+        
         return view('admin.dashbroard');
     }
 
