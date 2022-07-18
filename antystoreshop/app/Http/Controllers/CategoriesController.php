@@ -111,7 +111,7 @@ class CategoriesController extends Controller
             'parent_id' => $request->parent_id,
             'slug' => Str::slug($request->name)
         ]);
-        Session::flash('success', 'Cập nhật khách hàng thành công');
+        Session::flash('success', 'Cập nhật danh mục thành công');
         return redirect()->route('categories.index');
     }
 

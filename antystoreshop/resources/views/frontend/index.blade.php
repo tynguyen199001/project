@@ -2,7 +2,6 @@
 @section('content')
 <main id="main">
     <div class="container">
-
         <!--MAIN SLIDE-->
         <div class="wrap-main-slide">
             <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true"
@@ -80,7 +79,7 @@
                         <div class="wrap-price"><ins>
                                 <p class="product-price">{{$item->price}}</p>
                             </ins> <del>
-                                <p class="product-price">250.00vnđ</p>
+                                <p class="product-price">0.vnđ</p>
                             </del></div>
                     </div>
                 </div>
