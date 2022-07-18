@@ -47,3 +47,4 @@ Route::post('/login', [LoginController::class, 'loginAdmin'])->name('login.login
 
 Route::resource('/front',HomeController::class);
 
+
