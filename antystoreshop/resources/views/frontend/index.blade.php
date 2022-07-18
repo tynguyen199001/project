@@ -2,7 +2,6 @@
 @section('content')
 <main id="main">
     <div class="container">
-
         <!--MAIN SLIDE-->
         <div class="wrap-main-slide">
             <div class="slide-carousel owl-carousel style-nav-1" data-items="1" data-loop="1" data-nav="true"
@@ -56,7 +55,7 @@
 
         <!--On Sale-->
         <div class="wrap-show-advance-info-box style-1 has-countdown">
-            <h3 class="title-box">On Sale</h3>
+            <h3 class="title-box">Sản Phẩm Giảm Giá</h3>
             <div class="wrap-countdown mercado-countdown" data-expire="2020/12/12 12:34:56"></div>
             <div class="wrap-products slide-carousel owl-carousel style-nav-1 equal-container " data-items="5"
                 data-loop="false" data-nav="true" data-dots="false"
@@ -66,7 +65,7 @@
                 <div class="product product-style-2 equal-elem ">
                     <div class="product-thumnail">
                         <a href="detail.html" title="T-Shirt Raw Hem Organic Boro Constrast Denim">
-                            <figure>><img src="{{$item->image_path}}" height="1000" width="800"></figure>
+                            <figure>><img src="{{$item->image_path}}" height="800" width="800"></figure>
                         </a>
                         <div class="group-flash">
                             <span class="flash-item sale-label">sale</span>
@@ -76,12 +75,11 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <a href="#" class="product-name"><span>Radiant-360 R6 Wireless Omnidirectional Speaker
-                                [White]</span></a>
+                        <a href="#" class="product-name"><span>{{$item->name}}</span></a>
                         <div class="wrap-price"><ins>
                                 <p class="product-price">{{$item->price}}</p>
                             </ins> <del>
-                                <p class="product-price">$250.00</p>
+                                <p class="product-price">0.vnđ</p>
                             </del></div>
                     </div>
                 </div>
